@@ -23,10 +23,13 @@ public class Usuario {
     private String nome;
 
     @Column(nullable = false)
-    private String email;
+    private String login;
 
     @Column(nullable = false)
     private String senha;
+
+    @Column(nullable = false)
+    private Boolean ativo;
 
     @CreationTimestamp
     @Column(nullable = false, columnDefinition = "datetime")
@@ -36,9 +39,32 @@ public class Usuario {
     @Column(nullable = false, columnDefinition = "datetime")
     private LocalDateTime dataAtualizacao;
 
-    @ManyToMany
-    @JoinTable(name = "usuario_grupo",
+    @Column()
+    private String codigoRecuperacaoUsuario;
+    // CONTROLE DE ACESSO
+    @Column()
+    private String token;
+
+    @Column()
+    @Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime dataExpiracaoToken;
+
+    @Column()
+    @Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime dataAlteracaoSenha;
+
+    @Column()
+    private Boolean requisitadoNovaSenha;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "usuario_role",
             joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "grupo_id"))
-    private List<Grupo> grupos = new ArrayList<>();
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<Role> roles = new ArrayList<>();
 }
+
+
+
+
+
+

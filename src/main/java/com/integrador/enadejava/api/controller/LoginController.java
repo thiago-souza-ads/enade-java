@@ -2,7 +2,6 @@ package com.integrador.enadejava.api.controller;
 
 import com.integrador.enadejava.domain.dto.LoginDto;
 import com.integrador.enadejava.domain.exception.BusinessException;
-import com.integrador.enadejava.domain.exception.GrupoNaoEncontradaException;
 import com.integrador.enadejava.domain.model.Usuario;
 import com.integrador.enadejava.domain.service.CadastroUsuarioService;
 import com.integrador.enadejava.domain.service.LoginService;
@@ -26,22 +25,22 @@ public class LoginController {
     @PostMapping("/logar")
     public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
         Boolean autenticado;
-        String email = credentials.get("email");
+        String login = credentials.get("login");
         String password = credentials.get("password");
-        LoginDto loginDto = new LoginDto(email, password);
+        LoginDto loginDto = new LoginDto(login, password);
         try {
-            try{
-                Usuario user = cadastroUsuarioService.findByEmail(email);
+            try {
+                Usuario user = cadastroUsuarioService.findByEmail(login);
                 autenticado = loginService.autenticar(user, password);
-                if(autenticado){
+                if (autenticado) {
                     return ResponseEntity.ok(user);
                 } else {
                     return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
                 }
-            } catch (Exception e){
+            } catch (Exception e) {
 
             }
-        } catch (GrupoNaoEncontradaException e) {
+        } catch (BusinessException e) {
             throw new BusinessException(e.getMessage(), e);
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

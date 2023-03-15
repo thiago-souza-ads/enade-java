@@ -5,18 +5,19 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Permissao {
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+public class Coordenador {
 
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome", length = 100)
+    @Column(nullable = false)
     private String nome;
 
-    @Column(name = "descricao", length = 200)
-    private String descricao;
+    @OneToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 }

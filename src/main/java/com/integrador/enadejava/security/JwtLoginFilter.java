@@ -2,13 +2,11 @@ package com.integrador.enadejava.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.integrador.enadejava.domain.dto.CredenciaisDto;
-import com.integrador.enadejava.security.CustomAuthenticationToken;
-import com.integrador.enadejava.security.JwtUtil;
-import com.integrador.enadejava.security.UsuarioSecurity;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -21,6 +19,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
 
     private AuthenticationManager authenticationManager;
 
+    @Autowired
     private JwtUtil jwtUtil;
 
     public JwtLoginFilter(AuthenticationManager authenticationManager, JwtUtil jwtUtil) {

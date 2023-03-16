@@ -33,13 +33,10 @@ public class SecurityConfig {
 
     private static final String[] ACESSOS_SWAGGER = {"/v2/api-docs", "/swagger-resources/**", "/swagger-ui.html", "/webjars/**"};
 
-    private static final String[] ACESSOS_WEB = {"/index.html", "/favicon.ico", "/assets/**", "/main.**", "/polyfills.**", "/runtime.**", "/vendor.**", "/styles.**", "/app/**"};
+    private static final String[] ACESSOS_WEB = {"/login.** /index.html", "/favicon.ico", "/assets/**", "/main.**", "/polyfills.**", "/runtime.**", "/vendor.**", "/styles.**", "/app/**"};
 
     private static final String[] ACESSOS_PUBLICOS = (String[]) ArrayUtils.addAll(ArrayUtils.addAll(ACESSOS_SWAGGER, ACESSOS_WEB), new String[]{
-            "/websocket/**",
-            "/whatsapp/**",
-            "/leitores-rfid/public/**",
-            "/leitores-rfid/app-if1-webhook"
+            "/login/**"
     });
 
     @Bean

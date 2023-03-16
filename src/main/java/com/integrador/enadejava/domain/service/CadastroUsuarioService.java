@@ -41,8 +41,8 @@ public class CadastroUsuarioService {
                 .orElseThrow(
                         () -> new UsuarioNaoEncontradaException(usuarioId));
     }
-    public Usuario findByEmail(String login) {
-        return usuarioRepository.findByLoginEquals(login)
+    public Usuario findByEmail(String email) {
+        return (Usuario) usuarioRepository.findByEmailEquals(email)
                 .orElseThrow(
                         () -> new UsuarioNaoAutorizadoException());
     }

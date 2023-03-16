@@ -5,16 +5,20 @@ import com.integrador.enadejava.domain.exception.BusinessException;
 import com.integrador.enadejava.domain.model.Usuario;
 import com.integrador.enadejava.domain.service.CadastroUsuarioService;
 import com.integrador.enadejava.domain.service.LoginService;
+import com.integrador.enadejava.security.JwtGenerator;
+import jakarta.annotation.security.PermitAll;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
 @RequestMapping("/login")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "127.0.0.1"})
 public class LoginController {
     @Autowired
     LoginService loginService;
@@ -22,27 +26,16 @@ public class LoginController {
     @Autowired
     CadastroUsuarioService cadastroUsuarioService;
 
-    @PostMapping("/logar")
-    public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
-        Boolean autenticado;
-        String login = credentials.get("login");
-        String password = credentials.get("password");
-        LoginDto loginDto = new LoginDto(login, password);
-        try {
-            try {
-                Usuario user = cadastroUsuarioService.findByEmail(login);
-                autenticado = loginService.autenticar(user, password);
-                if (autenticado) {
-                    return ResponseEntity.ok(user);
-                } else {
-                    return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-                }
-            } catch (Exception e) {
+    private static final String TIME_ZONE = "America/Sao_Paulo";
 
-            }
-        } catch (BusinessException e) {
-            throw new BusinessException(e.getMessage(), e);
+    @PermitAll
+    @PostMapping("/logar")
+    public ResponseEntity<?> login(@RequestBody Map<String, String> credentials, Authentication authentication) {
+        if (authentication.isAuthenticated()) {
+            Usuario user = (Usuario) authentication.getPrincipal();
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 }

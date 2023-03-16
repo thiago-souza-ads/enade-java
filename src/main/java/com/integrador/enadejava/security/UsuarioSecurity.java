@@ -16,7 +16,7 @@ public class UsuarioSecurity implements UserDetails {
 
     private String nome;
 
-    private String login;
+    private String email;
 
     private String senha;
 
@@ -35,7 +35,7 @@ public class UsuarioSecurity implements UserDetails {
         super();
         this.id = usuario.getId();
         this.nome = usuario.getNome();
-        this.login = usuario.getLogin();
+        this.email = usuario.getEmail();
         this.senha = usuario.getSenha();
         this.ativo = usuario.getAtivo();
         this.dataCadastro = usuario.getDataCadastro();
@@ -55,7 +55,7 @@ public class UsuarioSecurity implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.login;
+        return this.email;
     }
 
     @Override

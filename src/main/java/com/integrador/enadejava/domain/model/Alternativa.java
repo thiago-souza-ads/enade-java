@@ -1,0 +1,54 @@
+package com.integrador.enadejava.domain.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Setter;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import java.time.LocalDateTime;
+
+@Data
+@Entity
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+public class Alternativa {
+
+    @Id
+    @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String descricao;
+
+    @Min(1)
+    @Max(5)
+    @Column
+    private Integer ordem;
+
+    @Column(columnDefinition = "boolean default false")
+    private Boolean correta;
+
+    @Column(columnDefinition = "boolean default false")
+    private Boolean acertou;
+
+    @Column(columnDefinition = "boolean default false")
+    @Setter
+    private Boolean escolhidaUsuario;
+
+    @Column
+    private LocalDateTime dataEscolha;
+
+    @ManyToOne
+    @JoinColumn(name = "pergunta_id", nullable = false)
+    private Pergunta pergunta;
+
+    @OneToOne
+    @JoinColumn(name = "alternativa_id")
+    private Explicacao explicacao;
+
+    public void setAcertou() {
+        this.acertou = this.correta && this.escolhidaUsuario;
+    }
+}

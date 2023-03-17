@@ -46,6 +46,4 @@ public class CadastroUsuarioService {
                 .orElseThrow(
                         () -> new UsuarioNaoAutorizadoException());
     }
-
-
 }

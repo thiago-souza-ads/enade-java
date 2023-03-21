@@ -26,7 +26,7 @@ public class LoginController {
     @PermitAll
     @PostMapping("/logar")
     public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
-            Usuario user = (Usuario) cadastroUsuarioService.findByEmail(credentials.get("email"));
+        Usuario user = (Usuario) cadastroUsuarioService.findByEmail(credentials.get("login"));
             if(user != null){
                 return ResponseEntity.ok(user);
             }

@@ -20,6 +20,7 @@ insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualiza
 insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha) values (13, 'Waldeir Marcelino', 'waldeir@teste.com', '123', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false);
 insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha) values (14, 'Marcelo Ferri', 'marcelo@teste.com', '123', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false);
 insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha) values (15, 'Pernambuco Meu mano', 'pernambuco@teste.com', '123', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false);
+insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha) values (16, 'Enade User', 'user@enade.com', 'user', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false);
 
 insert into administrador (id, nome, usuario_id) values (1, 'Analista Master', 1);
 

@@ -1,5 +1,6 @@
 package com.integrador.enadejava.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -7,9 +8,9 @@ import lombok.EqualsAndHashCode;
 import javax.validation.constraints.NotBlank;
 
 /**
- *  Classe que representa um Coordenador no sistema.
- *  Um Coordenador é responsável por gerenciar as atividades da trilha de aprendizado.
- *  Cada Coordenador possui um nome e um usuário associado.
+ * Classe que representa um Coordenador no sistema.
+ * Um Coordenador é responsável por gerenciar as atividades da trilha de aprendizado.
+ * Cada Coordenador possui um nome e um usuário associado.
  */
 @Data
 @Entity
@@ -37,4 +38,9 @@ public class Coordenador {
     @OneToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
+
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "curso_id")
+    private Curso curso;
 }

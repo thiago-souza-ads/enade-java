@@ -20,7 +20,7 @@ public class Questionario {
 
     @NotBlank
     @Column(nullable = false)
-    private String nome;
+    private String tema;
 
     @OneToOne
     @JoinColumn(name = "etapa_id")

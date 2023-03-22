@@ -28,6 +28,10 @@ public class Trilha {
     @Column
     private LocalDateTime dataTermino;
 
+    @ManyToOne
+    @JoinColumn(name = "aluno_id", nullable = false)
+    private Aluno aluno;
+
     @CreationTimestamp
     @Column(nullable = false, columnDefinition = "datetime")
     private LocalDateTime dataCadastro;

@@ -1,5 +1,6 @@
 package com.integrador.enadejava.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -30,6 +31,7 @@ public class Pergunta {
     @Column
     private LocalDateTime dataTermino;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "questionario_id", nullable = false)
     private Questionario questionario;

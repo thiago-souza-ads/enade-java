@@ -4,7 +4,7 @@ public abstract class Constantes {
 
     protected Constantes() {}
 
-    public static final String URI = "https://www.algafood.com.br";
+    public static final String URI = "https://www.enade-mapa-brilho.com.br";
 
     public static final String PATCH_ENTIDADE_NAO_ENCONTRADA = "/entidade-nao-encontrada";
     public static final String PATCH_URL_INXEXISTENTE = "/url-nao-existente";
@@ -47,4 +47,13 @@ public abstract class Constantes {
     public static final String TITLE_PARAMETRO_URL_INVALIDO = "O parâmetro de URL '%s' recebeu o valor '%s', que é de um tipo inválido. Corrija e informe um valor compatível com o tipo [{%s}].";
     public static final String DETAIL_MENSAGEM_INCOMPREENSIVEL = "Corpo da reqeuisição está inválido. Verifique erro de sintaxe.";
     public static final String MENSAGEM_ERRO_GENERIO_USUARIO_FINAL = "Ocorreu um erro no sistema, tente novamente!";
+
+    /**
+     * Roles
+     */
+    public static final String ROLE_ADMINISTRADOR = "Administrador";
+    public static final String ROLE_COORDENADOR = "Coordenador";
+    public static final String ROLE_PROFESSOR = "Professor";
+    public static final String ROLE_ALUNO = "Aluno";
+
 }

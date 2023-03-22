@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.validation.constraints.Email;
 import java.time.LocalDateTime;
@@ -63,10 +64,9 @@ public class Usuario {
             joinColumns = @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles = new ArrayList<>();
+
+    public void setSenhaCriptografada(String senha) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        this.senha = encoder.encode(senha);
+    }
 }
-
-
-
-
-
-

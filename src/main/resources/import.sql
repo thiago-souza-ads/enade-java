@@ -40,4 +40,17 @@ insert into usuario_role (usuario_id, role_id) values (3, 2);
 insert into usuario_role (usuario_id, role_id) values (4, 2);
 insert into usuario_role (usuario_id, role_id) values (5, 2);
 
+insert into questionario (id, tema) values (1, 'Tecnologia');
+insert into pergunta (id, enunciado, questionario_id) VALUES (1, 'Qual a diferença entre Inteligência Artificial e Aprendizado de Máquina?', 1);
+insert into alternativa (id, descricao, correta, pergunta_id) values (1, 'Não há diferença entre os dois conceitos', false, 1);
+insert into alternativa (id, descricao, correta, pergunta_id) values (2, 'Inteligência Artificial é um subconjunto do Aprendizado de Máquina', false, 1);
+insert into alternativa (id, descricao, correta, pergunta_id) values (3, 'Aprendizado de Máquina é um subconjunto da Inteligência Artificial', true, 1);
+insert into alternativa (id, descricao, correta, pergunta_id) values (4, 'Inteligência Artificial é uma técnica utilizada apenas em jogos de computador', false, 1);
+insert into alternativa (id, descricao, correta, pergunta_id) values (5, 'Aprendizado de Máquina é uma técnica utilizada apenas em reconhecimento de voz', false, 1);
+insert into explicacao (id, descricao, alternativa_id) values (1, 'A Está incorreta, pois não representam a diferença entre as duas técnicas', 1);
+insert into explicacao (id, descricao, alternativa_id) values (2, 'Alternativa B está errada ao afirmar que a Inteligência Artificial é um subconjunto do Aprendizado de Máquina.', 2);
+insert into explicacao (id, descricao, alternativa_id) values (3, 'Parabéns, Aprendizado de Máquina é uma das técnicas que compõem a Inteligência Artificial, assim como outras técnicas, como Redes Neurais, Lógica Fuzzy, etc. ', 3);
+insert into explicacao (id, descricao, alternativa_id) values (4, 'D incorreta por tal motivo', 4);
+insert into explicacao (id, descricao, alternativa_id) values (5, 'E está incorreta por tal motivo', 5);
+
 SET FOREIGN_KEY_CHECKS=1;

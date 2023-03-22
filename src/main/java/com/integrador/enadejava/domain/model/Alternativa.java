@@ -1,5 +1,6 @@
 package com.integrador.enadejava.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -40,6 +41,7 @@ public class Alternativa {
     @Column
     private LocalDateTime dataEscolha;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "pergunta_id", nullable = false)
     private Pergunta pergunta;

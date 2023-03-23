@@ -3,6 +3,7 @@ package com.integrador.enadejava.api.controller;
 import com.integrador.enadejava.domain.model.Alternativa;
 import com.integrador.enadejava.domain.service.AlternativaService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AlternativaController {
 
-    private final AlternativaService alternativaService;
+    @Autowired
+    private AlternativaService alternativaService;
 
     @GetMapping("/{id}")
     public ResponseEntity<Alternativa> buscarPorId(@PathVariable Long id) {

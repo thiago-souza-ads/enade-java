@@ -17,7 +17,7 @@ import java.util.Optional;
 @Service
 public class CoordenadorService {
 
-    private final CoordenadorRepository coordenadorRepository;
+    @Autowired private  CoordenadorRepository coordenadorRepository;
 
     @Autowired
     RoleService roleService;

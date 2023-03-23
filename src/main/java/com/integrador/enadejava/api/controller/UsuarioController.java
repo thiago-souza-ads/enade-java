@@ -1,6 +1,6 @@
 package com.integrador.enadejava.api.controller;
 
-import com.integrador.enadejava.domain.dto.UsuarioDTO;
+import com.integrador.enadejava.domain.dto.UsuarioDto;
 import com.integrador.enadejava.domain.model.Usuario;
 import com.integrador.enadejava.domain.repository.UsuarioRepository;
 import com.integrador.enadejava.domain.service.UsuarioService;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -28,33 +27,35 @@ public class UsuarioController {
     private UsuarioRepository usuarioRepository;
 
     @GetMapping
-    public ResponseEntity<List<UsuarioDTO>> listar() {
+    public ResponseEntity<List<UsuarioDto>> listar() {
         List<Usuario> usuarios = usuarioRepository.findAll();
-        List<UsuarioDTO> usuarioDTOS = new ArrayList<>();
+        List<UsuarioDto> usuarioDTOS = new ArrayList<>();
         for (Usuario usuario : usuarios) {
-            usuarioDTOS.add(modelMapper.map(usuario, UsuarioDTO.class));
+            UsuarioDto dto = modelMapper.map(usuario, UsuarioDto.class);
+            usuarioDTOS.add(dto);
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioDTOS);
     }
+
     @PostMapping
-    public ResponseEntity<UsuarioDTO> create(@RequestBody UsuarioDTO usuarioDTO) {
+    public ResponseEntity<UsuarioDto> create(@RequestBody UsuarioDto usuarioDTO) {
         Usuario usuario = modelMapper.map(usuarioDTO, Usuario.class);
         usuario = usuarioService.create(usuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(modelMapper.map(usuario, UsuarioDTO.class));
+        return ResponseEntity.status(HttpStatus.CREATED).body(modelMapper.map(usuario, UsuarioDto.class));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UsuarioDTO> findById(@PathVariable Long id) {
+    public ResponseEntity<UsuarioDto> findById(@PathVariable Long id) {
         Usuario usuario = usuarioService.findById(id);
-        return ResponseEntity.ok(modelMapper.map(usuario, UsuarioDTO.class));
+        return ResponseEntity.ok(modelMapper.map(usuario, UsuarioDto.class));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UsuarioDTO> update(@PathVariable Long id, @RequestBody UsuarioDTO usuarioDTO) {
+    public ResponseEntity<UsuarioDto> update(@PathVariable Long id, @RequestBody UsuarioDto usuarioDTO) {
         Usuario usuario = modelMapper.map(usuarioDTO, Usuario.class);
         usuario.setId(id);
         usuario = usuarioService.update(usuario);
-        return ResponseEntity.ok(modelMapper.map(usuario, UsuarioDTO.class));
+        return ResponseEntity.ok(modelMapper.map(usuario, UsuarioDto.class));
     }
 
     @DeleteMapping("/{id}")

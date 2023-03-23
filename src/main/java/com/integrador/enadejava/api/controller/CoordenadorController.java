@@ -2,6 +2,7 @@ package com.integrador.enadejava.api.controller;
 
 import com.integrador.enadejava.domain.model.Coordenador;
 import com.integrador.enadejava.domain.service.CoordenadorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -14,7 +15,8 @@ import java.util.Optional;
 @RequestMapping("/coordenadores")
 public class CoordenadorController {
 
-    private final CoordenadorService coordenadorService;
+    @Autowired
+    private  CoordenadorService coordenadorService;
 
     public CoordenadorController(CoordenadorService coordenadorService) {
         this.coordenadorService = coordenadorService;

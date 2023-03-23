@@ -1,30 +1,32 @@
 package com.integrador.enadejava.domain.dto;
 
-import java.io.Serializable;
+import lombok.*;
 
-public class CredenciaisDto implements Serializable{
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class CredenciaisDto {
 
-	private static final long serialVersionUID = 1L;
-	
-	private String login;
-	private String senha;
-	
-	public CredenciaisDto() {}
+    public String login;
+    public String senha;
 
-	public String getEmail() {
-		return login;
-	}
 
-	public void setEmail(String email) {
-		this.login = email;
-	}
+    public String getEmail() {
+        return login;
+    }
 
-	public String getSenha() {
-		return senha;
-	}
+    public void setEmail(String email) {
+        this.login = email;
+    }
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
 }

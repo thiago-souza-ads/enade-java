@@ -1,6 +1,6 @@
 package com.integrador.enadejava.config;
 
-import com.integrador.enadejava.domain.dto.UsuarioDTO;
+import com.integrador.enadejava.domain.dto.UsuarioDto;
 import com.integrador.enadejava.domain.model.Usuario;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -12,8 +12,8 @@ public class ModelMapperConfig {
     @Bean
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
-        modelMapper.createTypeMap(UsuarioDTO.class, Usuario.class)
-                .addMapping(UsuarioDTO::getSenha, Usuario::setSenhaCriptografada);
+        modelMapper.createTypeMap(UsuarioDto.class, Usuario.class)
+                .addMapping(UsuarioDto::getSenha, Usuario::setSenhaCriptografada);
         return modelMapper;
     }
 }

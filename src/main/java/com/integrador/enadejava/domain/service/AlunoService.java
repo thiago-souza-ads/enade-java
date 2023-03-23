@@ -9,6 +9,7 @@ import com.integrador.enadejava.domain.model.Usuario;
 import com.integrador.enadejava.domain.repository.AlunoRepository;
 import com.integrador.enadejava.domain.repository.CursoRepository;
 import com.integrador.enadejava.domain.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,10 +19,14 @@ import java.util.List;
 @Service
 public class AlunoService {
 
-    private final AlunoRepository alunoRepository;
-    private final UsuarioRepository usuarioRepository;
-    private final CursoRepository cursoRepository;
-    private final RoleService roleService;
+    @Autowired
+    private AlunoRepository alunoRepository;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+    @Autowired
+    private CursoRepository cursoRepository;
+    @Autowired
+    private RoleService roleService;
 
     public AlunoService(AlunoRepository alunoRepository, UsuarioRepository usuarioRepository, CursoRepository cursoRepository, RoleService roleService) {
         this.alunoRepository = alunoRepository;
@@ -73,7 +78,7 @@ public class AlunoService {
     }
 
     private void findRole(Aluno alunoSalvo, Usuario usuario) {
-        Role role = roleService.listar().stream().filter(r-> r.getNome().equals(Constantes.ROLE_ALUNO)).findFirst().orElseThrow(() -> new EntidadeNaoEncontradaException("Não foi localizada permissão de Aluno"));
+        Role role = roleService.listar().stream().filter(r -> r.getNome().equals(Constantes.ROLE_ALUNO)).findFirst().orElseThrow(() -> new EntidadeNaoEncontradaException("Não foi localizada permissão de Aluno"));
         List<Role> roles = Collections.singletonList(role);
         usuario.setRoles(roles);
         usuarioRepository.save(usuario);

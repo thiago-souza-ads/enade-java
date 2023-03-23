@@ -1,16 +1,16 @@
 package com.integrador.enadejava.domain.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-import java.io.Serializable;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
-public class LoginDto implements Serializable {
+@NoArgsConstructor
+@Getter
+@Setter
+public class LoginDto {
 
-    private final String email;
-    private final String senha;
+    public String email;
+    public String senha;
 
 }

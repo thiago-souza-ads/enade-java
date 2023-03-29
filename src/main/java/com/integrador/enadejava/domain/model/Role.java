@@ -1,8 +1,10 @@
 package com.integrador.enadejava.domain.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import org.springframework.data.annotation.Id;
 
 
 @Data

@@ -32,4 +32,13 @@ public class LoginController {
             }
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
     }
+    @PermitAll
+    @PostMapping("/validar-token")
+    public ResponseEntity<?> validarToken(@RequestBody String token) {
+        Usuario user = (Usuario) cadastroUsuarioService.findOrFail(1L);
+        if(user != null){
+            return ResponseEntity.ok(user);
+        }
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+    }
 }

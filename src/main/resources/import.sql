@@ -1,11 +1,13 @@
-SET FOREIGN_KEY_CHECKS=0;
+-- SET FOREIGN_KEY_CHECKS=0;
 
 insert into role (id, nome) values (1, 'Administrador');
 insert into role (id, nome) values (2, 'Coordenador');
 insert into role (id, nome) values (3, 'Professor');
 insert into role (id, nome) values (4, 'Aluno');
 
-insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha) values (1, 'Thiago Rodrigues de Souza', 'thiago@teste.com', '123', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false);
+insert into avatar (id, top_type, accessories_type, hat_color , hair_color ,facial_hair_type ,facial_hair_color ,clothe_type ,clothe_type, graphic_type, eye_type, eyebrow_type ,mouth_type ,skin_color) values (1, 'ShortHairShortFlat', 'Blank', 'Black' , 'Brown' , 'Blank' ,'Red' ,'Hoodie' ,'Blue03', 'Skull', 'Default', 'Default' ,'Smile' ,'Pale');
+
+insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha, avatar_id) values (1, 'Thiago Rodrigues de Souza', 'thiago@teste.com', '123', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false, 1);
 insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha) values (2, 'Douglas Rocha Mendes', 'douglas@teste.com', '123', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false);
 insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha) values (3, 'Valmir da Silva', 'valmir@teste.com', '123', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false);
 insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha) values (4, 'Juliano Maciel', 'juliano@teste.com', '123', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false);
@@ -37,7 +39,7 @@ insert into curso (id, nome, coordenador_id) values (4, 'Educação Física', 4)
 insert into usuario_role (usuario_id, role_id) values (1, 1);
 insert into usuario_role (usuario_id, role_id) values (2, 2);
 insert into usuario_role (usuario_id, role_id) values (3, 2);
-insert into usuario_role (usuario_id, role_id) values (4, 2);
+insert into usuario_role (usuario_id, role_id) values (4, 3);
 insert into usuario_role (usuario_id, role_id) values (5, 2);
 
 insert into questionario (id, tema) values (1, 'Tecnologia');
@@ -53,4 +55,4 @@ insert into explicacao (id, descricao, alternativa_id) values (3, 'Parabéns, Ap
 insert into explicacao (id, descricao, alternativa_id) values (4, 'D incorreta por tal motivo', 4);
 insert into explicacao (id, descricao, alternativa_id) values (5, 'E está incorreta por tal motivo', 5);
 
-SET FOREIGN_KEY_CHECKS=1;
+-- SET FOREIGN_KEY_CHECKS=1;

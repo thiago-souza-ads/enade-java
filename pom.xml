@@ -15,7 +15,7 @@
     <name>enadejava</name>
     <description>enadejava</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>18</java.version>
     </properties>
     <!--    <reporting>-->
     <!--        <outputDirectory>target/site</outputDirectory>-->
@@ -98,6 +98,11 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
             <version>5.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>7.0.1.Final</version>
         </dependency>
     </dependencies>
 

@@ -3,7 +3,7 @@ insert into role (id, nome) values (2, 'Coordenador');
 insert into role (id, nome) values (3, 'Professor');
 insert into role (id, nome) values (4, 'Aluno');
 
-insert into avatar (id, top_type, accessories_type, hat_color , hair_color ,facial_hair_type ,facial_hair_color ,clothe_type ,clothe_type, graphic_type, eye_type, eyebrow_type ,mouth_type ,skin_color) values (1, 'ShortHairShortFlat', 'Blank', 'Black' , 'Brown' , 'Blank' ,'Red' ,'Hoodie' ,'Blue03', 'Skull', 'Default', 'Default' ,'Smile' ,'Pale');
+insert into avatar (id, top_type, accessories_type, hat_color , hair_color ,facial_hair_type ,facial_hair_color ,clothe_type ,clothe_color, graphic_type, eye_type, eyebrow_type ,mouth_type ,skin_color) values (1, 'ShortHairShortFlat', 'Blank', 'Black' , 'Brown' , 'Blank' ,'Red' ,'Hoodie' ,'Blue03', 'Skull', 'Default', 'Default' ,'Smile' ,'Pale');
 
 insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha, avatar_id) values (1, 'Thiago Rodrigues de Souza', 'thiago@teste.com', '123', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false, 1);
 insert into usuario (id, nome, email, senha, ativo, data_cadastro, data_atualizacao, token, data_expiracao_token, data_alteracao_senha, requisitado_nova_senha) values (2, 'Douglas Rocha Mendes', 'douglas@teste.com', '123', true, utc_timestamp, utc_timestamp, 'token', utc_timestamp, utc_timestamp, false);
@@ -52,3 +52,4 @@ insert into explicacao (id, descricao, alternativa_id) values (2, 'Alternativa B
 insert into explicacao (id, descricao, alternativa_id) values (3, 'Parabéns, Aprendizado de Máquina é uma das técnicas que compõem a Inteligência Artificial, assim como outras técnicas, como Redes Neurais, Lógica Fuzzy, etc. ', 3);
 insert into explicacao (id, descricao, alternativa_id) values (4, 'D incorreta por tal motivo', 4);
 insert into explicacao (id, descricao, alternativa_id) values (5, 'E está incorreta por tal motivo', 5);
+

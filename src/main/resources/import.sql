@@ -1,5 +1,3 @@
--- SET FOREIGN_KEY_CHECKS=0;
-
 insert into role (id, nome) values (1, 'Administrador');
 insert into role (id, nome) values (2, 'Coordenador');
 insert into role (id, nome) values (3, 'Professor');
@@ -54,5 +52,3 @@ insert into explicacao (id, descricao, alternativa_id) values (2, 'Alternativa B
 insert into explicacao (id, descricao, alternativa_id) values (3, 'Parabéns, Aprendizado de Máquina é uma das técnicas que compõem a Inteligência Artificial, assim como outras técnicas, como Redes Neurais, Lógica Fuzzy, etc. ', 3);
 insert into explicacao (id, descricao, alternativa_id) values (4, 'D incorreta por tal motivo', 4);
 insert into explicacao (id, descricao, alternativa_id) values (5, 'E está incorreta por tal motivo', 5);
-
--- SET FOREIGN_KEY_CHECKS=1;

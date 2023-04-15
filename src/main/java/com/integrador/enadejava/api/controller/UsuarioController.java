@@ -63,4 +63,9 @@ public class UsuarioController {
         usuarioService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/atualizar-avatar")
+    public ResponseEntity<?> atualizarAvatar(@RequestBody UsuarioDto usuarioDto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body("");
+    }
 }

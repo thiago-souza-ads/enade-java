@@ -44,7 +44,7 @@ public class Usuario {
 
     @Column()
     private String codigoRecuperacaoUsuario;
-    // CONTROLE DE ACESSO
+
     @Column()
     private String token;
 
@@ -69,4 +69,8 @@ public class Usuario {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         this.senha = encoder.encode(senha);
     }
+
+    @OneToOne
+    @JoinColumn(name = "avatar_id")
+    private Avatar avatar;
 }

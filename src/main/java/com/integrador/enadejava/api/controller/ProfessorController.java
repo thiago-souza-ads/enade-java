@@ -2,7 +2,6 @@ package com.integrador.enadejava.api.controller;
 
 import com.integrador.enadejava.domain.model.Professor;
 import com.integrador.enadejava.domain.service.ProfessorService;
-import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,12 +28,12 @@ public class ProfessorController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Professor cadastrar(@RequestBody @Valid Professor professor) {
+    public Professor cadastrar(@RequestBody  Professor professor) {
         return professorService.cadastrar(professor);
     }
 
     @PutMapping("/{id}")
-    public Professor atualizar(@PathVariable Long id, @RequestBody @Valid Professor professor) {
+    public Professor atualizar(@PathVariable Long id, @RequestBody  Professor professor) {
         Professor professorAtual = professorService.buscarOuFalhar(id);
 
         BeanUtils.copyProperties(professor, professorAtual, "id", "usuario");

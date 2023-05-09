@@ -19,7 +19,7 @@ public class UsuarioDto {
 
      public Long id;
      public String nome;
-    @Email
+     @Email
      public String email;
      public String senha;
      public Boolean ativo;
@@ -31,4 +31,5 @@ public class UsuarioDto {
      public LocalDateTime dataAlteracaoSenha;
      public Boolean requisitadoNovaSenha;
      public List<RoleDto> roles;
+     public AvatarDto avatar;
 }

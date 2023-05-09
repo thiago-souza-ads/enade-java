@@ -4,6 +4,7 @@ import com.integrador.enadejava.domain.dto.UsuarioDto;
 import com.integrador.enadejava.domain.model.Usuario;
 import com.integrador.enadejava.domain.repository.UsuarioRepository;
 import com.integrador.enadejava.domain.service.UsuarioService;
+import jakarta.annotation.security.PermitAll;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -64,8 +65,10 @@ public class UsuarioController {
         return ResponseEntity.noContent().build();
     }
 
+    @PermitAll
     @PostMapping("/atualizar-avatar")
     public ResponseEntity<?> atualizarAvatar(@RequestBody UsuarioDto usuarioDto) {
+        usuarioService.atualizarAvatar(usuarioDto);
         return ResponseEntity.status(HttpStatus.CREATED).body("");
     }
 }

@@ -38,7 +38,9 @@ insert into usuario_role (usuario_id, role_id) values (1, 1);
 insert into usuario_role (usuario_id, role_id) values (2, 2);
 insert into usuario_role (usuario_id, role_id) values (3, 2);
 insert into usuario_role (usuario_id, role_id) values (4, 3);
-insert into usuario_role (usuario_id, role_id) values (5, 2);
+insert into usuario_role (usuario_id, role_id) values (5, 4);
+insert into usuario_role (usuario_id, role_id) values (6, 4);
+insert into usuario_role (usuario_id, role_id) values (7, 4);
 
 insert into questionario (id, tema) values (1, 'Tecnologia');
 insert into pergunta (id, enunciado, questionario_id) VALUES (1, 'Qual a diferença entre Inteligência Artificial e Aprendizado de Máquina?', 1);

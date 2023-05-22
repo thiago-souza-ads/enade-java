@@ -1,10 +1,10 @@
 package com.integrador.enadejava.domain.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 @Data

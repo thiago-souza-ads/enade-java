@@ -2,9 +2,8 @@ package com.integrador.enadejava.domain.dto;
 
 
 import com.integrador.enadejava.domain.model.Coordenador;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-
-import javax.validation.constraints.NotBlank;
 
 /**
  * A DTO for the {@link Coordenador} entity

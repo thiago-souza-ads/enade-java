@@ -2,10 +2,11 @@ package com.integrador.enadejava.domain.dto;
 
 import com.integrador.enadejava.domain.dto.CoordenadorDto;
 import com.integrador.enadejava.domain.model.Mapa;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.*;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 

@@ -2,12 +2,12 @@ package com.integrador.enadejava.api.controller;
 
 import com.integrador.enadejava.domain.model.Alternativa;
 import com.integrador.enadejava.domain.service.AlternativaService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController

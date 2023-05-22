@@ -3,10 +3,10 @@ package com.integrador.enadejava.domain.dto;
 import com.integrador.enadejava.domain.model.Etapa;
 import com.integrador.enadejava.domain.model.Pergunta;
 import com.integrador.enadejava.domain.model.Questionario;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;

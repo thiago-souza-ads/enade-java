@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.integrador</groupId>
     <artifactId>enadejava</artifactId>
@@ -17,9 +17,6 @@
     <properties>
         <java.version>18</java.version>
     </properties>
-    <!--    <reporting>-->
-    <!--        <outputDirectory>target/site</outputDirectory>-->
-    <!--    </reporting>-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -41,11 +38,7 @@
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-mysql</artifactId>
         </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>2.0.1.Final</version>
-        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -100,9 +93,9 @@
             <version>5.7.7</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>7.0.1.Final</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

@@ -1,9 +1,8 @@
 package com.integrador.enadejava.domain.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Data
 @AllArgsConstructor
@@ -13,12 +12,12 @@ import javax.validation.constraints.NotNull;
 public class FotoInputDTO {
 
     @NotBlank
-     public String descricao;
+    public String descricao;
 
     @NotBlank
-     public String base64;
+    public String base64;
 
     @NotNull
-     public Long midiaId;
+    public Long midiaId;
 
 }

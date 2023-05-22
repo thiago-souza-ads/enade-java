@@ -1,12 +1,12 @@
 package com.integrador.enadejava.domain.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.CreationTimestamp;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import java.time.LocalDateTime;
 
 @Data

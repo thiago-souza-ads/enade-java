@@ -4,12 +4,12 @@ import com.integrador.enadejava.domain.exception.EntidadeEmUsoException;
 import com.integrador.enadejava.domain.exception.EntidadeNaoEncontradaException;
 import com.integrador.enadejava.domain.model.Role;
 import com.integrador.enadejava.domain.service.RoleService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @AllArgsConstructor

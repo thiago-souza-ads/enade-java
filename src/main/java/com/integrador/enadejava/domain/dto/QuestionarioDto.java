@@ -1,9 +1,9 @@
 package com.integrador.enadejava.domain.dto;
 
 import com.integrador.enadejava.domain.model.Questionario;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 /**

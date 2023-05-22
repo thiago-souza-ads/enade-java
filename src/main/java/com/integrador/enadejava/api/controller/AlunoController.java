@@ -1,16 +1,16 @@
 package com.integrador.enadejava.api.controller;
 
-import com.integrador.enadejava.domain.exception.EntidadeNaoEncontradaException;
 import com.integrador.enadejava.domain.exception.BusinessException;
+import com.integrador.enadejava.domain.exception.EntidadeNaoEncontradaException;
 import com.integrador.enadejava.domain.model.Aluno;
 import com.integrador.enadejava.domain.service.AlunoService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @AllArgsConstructor

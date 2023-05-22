@@ -2,10 +2,10 @@ package com.integrador.enadejava.domain.dto;
 
 import com.integrador.enadejava.domain.model.Alternativa;
 import com.integrador.enadejava.domain.model.ExplicacaoDto;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.*;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import java.time.LocalDateTime;
 
 /**

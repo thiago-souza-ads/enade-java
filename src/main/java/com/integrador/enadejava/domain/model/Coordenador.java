@@ -3,10 +3,11 @@ package com.integrador.enadejava.domain.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.validation.constraints.NotBlank;
+
 
 /**
  * Classe que representa um Coordenador no sistema.

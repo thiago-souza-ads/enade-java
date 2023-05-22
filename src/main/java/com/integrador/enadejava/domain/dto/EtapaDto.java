@@ -1,9 +1,10 @@
 package com.integrador.enadejava.domain.dto;
 
 import com.integrador.enadejava.domain.model.Etapa;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-import javax.validation.constraints.NotBlank;
+
 import java.time.LocalDateTime;
 
 /**

@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * A DTO for the {@link Etapa} entity
@@ -19,6 +19,6 @@ public class EtapaDto {
     public Long id;
     @NotBlank
     public String descricao;
-    public LocalDateTime dataInicio;
-    public LocalDateTime dataTermino;
+    public Date dataInicio;
+    public Date dataTermino;
 }

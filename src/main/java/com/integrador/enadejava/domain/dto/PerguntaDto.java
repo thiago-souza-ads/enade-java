@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,8 +23,8 @@ public class PerguntaDto {
     public Long id;
     @Size(min = 10, max = 500)
     public String enunciado;
-    public LocalDateTime dataInicio;
-    public LocalDateTime dataTermino;
+    public Date dataInicio;
+    public Date dataTermino;
     public QuestionarioDto questionario;
     public List<AlternativaDto> alternativas;
 
@@ -46,8 +46,8 @@ public class PerguntaDto {
             public Long id;
             @NotBlank
             public String descricao;
-            public LocalDateTime dataInicio;
-            public LocalDateTime dataTermino;
+            public Date dataInicio;
+            public Date dataTermino;
         }
     }
 }

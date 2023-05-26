@@ -5,8 +5,8 @@ import com.integrador.enadejava.domain.model.ExplicacaoDto;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import lombok.*;
+import java.util.Date;
 
-import java.time.LocalDateTime;
 
 /**
  * A DTO for the {@link Alternativa} entity
@@ -25,7 +25,7 @@ public class AlternativaDto {
     public Boolean correta;
     public Boolean acertou;
     public Boolean escolhidaUsuario;
-    public LocalDateTime dataEscolha;
+    public Date dataEscolha;
     public PerguntaDto pergunta;
     public ExplicacaoDto explicacao;
 }

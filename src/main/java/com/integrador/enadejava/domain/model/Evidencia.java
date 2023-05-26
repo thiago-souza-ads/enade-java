@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity
@@ -22,7 +22,7 @@ public class Evidencia {
 
     @CreationTimestamp
     @Column(nullable = false, columnDefinition = "datetime")
-    private LocalDateTime dataCadastro;
+    private Date dataCadastro;
 
     @ManyToOne
     @JoinColumn(name = "caminhada_id", nullable = false)

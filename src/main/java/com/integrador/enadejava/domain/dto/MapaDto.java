@@ -8,7 +8,7 @@ import lombok.*;
 
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * A DTO for the {@link Mapa} entity
@@ -23,8 +23,8 @@ public class MapaDto{
     @Min(value = 2023, message = "O ano base deve ser maior ou igual a 2023")
     @Max(value = 2100, message = "O ano base deve ser menor ou igual a 2100")
      public Integer anoBase;
-     public LocalDateTime dataCadastro;
-     public LocalDateTime dataAtualizacao;
+     public Date dataCadastro;
+     public Date dataAtualizacao;
      public CoordenadorDto coordenador;
      public Boolean aprovado;
 }

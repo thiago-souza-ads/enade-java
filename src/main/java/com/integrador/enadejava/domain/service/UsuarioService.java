@@ -1,6 +1,5 @@
 package com.integrador.enadejava.domain.service;
-
-import com.integrador.enadejava.domain.dto.AvatarDto;
+import java.util.Date;
 import com.integrador.enadejava.domain.dto.UsuarioDto;
 import com.integrador.enadejava.domain.exception.EntidadeNaoEncontradaException;
 import com.integrador.enadejava.domain.model.Avatar;
@@ -10,7 +9,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 
 @Service
 public class UsuarioService {
@@ -22,7 +20,7 @@ public class UsuarioService {
     ModelMapper modelMapper;
 
     public Usuario create(Usuario usuario) {
-        usuario.setDataCadastro(LocalDateTime.now());
+        usuario.setDataCadastro(new Date());
         return usuarioRepository.save(usuario);
     }
 
@@ -34,7 +32,7 @@ public class UsuarioService {
     public Usuario update(Usuario usuario) {
         Usuario usuarioExistente = findById(usuario.getId());
         usuario.setDataCadastro(usuarioExistente.getDataCadastro());
-        usuario.setDataAtualizacao(LocalDateTime.now());
+        usuario.setDataAtualizacao(new Date());
         return usuarioRepository.save(usuario);
     }
 

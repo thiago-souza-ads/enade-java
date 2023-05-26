@@ -3,8 +3,8 @@ package com.integrador.enadejava.domain.dto;
 import com.integrador.enadejava.domain.model.Usuario;
 import jakarta.validation.constraints.Email;
 import lombok.*;
+import java.util.Date;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -23,12 +23,12 @@ public class UsuarioDto {
     public String email;
     public String senha;
     public Boolean ativo;
-    public LocalDateTime dataCadastro;
-    public LocalDateTime dataAtualizacao;
+    public Date dataCadastro;
+    public Date dataAtualizacao;
     public String codigoRecuperacaoUsuario;
     public String token;
-    public LocalDateTime dataExpiracaoToken;
-    public LocalDateTime dataAlteracaoSenha;
+    public Date dataExpiracaoToken;
+    public Date dataAlteracaoSenha;
     public Boolean requisitadoNovaSenha;
     public List<RoleDto> roles;
     public AvatarDto avatar;

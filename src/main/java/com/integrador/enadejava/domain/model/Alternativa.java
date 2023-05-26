@@ -8,7 +8,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.util.Date;
+
 
 @Data
 @Entity
@@ -39,7 +40,7 @@ public class Alternativa {
     private Boolean escolhidaUsuario;
 
     @Column
-    private LocalDateTime dataEscolha;
+    private Date dataEscolha;
 
     @JsonIgnore
     @ManyToOne

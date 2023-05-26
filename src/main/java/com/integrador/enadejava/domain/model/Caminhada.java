@@ -5,8 +5,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -25,10 +25,10 @@ public class Caminhada {
 
     @CreationTimestamp
     @Column(nullable = false, columnDefinition = "datetime")
-    private LocalDateTime dataCadastro;
+    private Date dataCadastro;
 
     @Column(columnDefinition = "datetime")
-    private LocalDateTime dataFinalizada;
+    private Date dataFinalizada;
 
     @OneToOne
     @JoinColumn(name = "mapa_id", nullable = false)

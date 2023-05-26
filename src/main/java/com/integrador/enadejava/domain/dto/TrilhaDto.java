@@ -2,9 +2,9 @@ package com.integrador.enadejava.domain.dto;
 
 import com.integrador.enadejava.domain.model.Trilha;
 import lombok.*;
-
+import java.util.Date;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+
 import java.util.List;
 
 /**
@@ -18,11 +18,11 @@ import java.util.List;
 public class TrilhaDto {
      public Long id;
      public Integer anoBase;
-     public LocalDateTime dataInicio;
-     public LocalDateTime dataTermino;
+     public Date dataInicio;
+     public Date dataTermino;
      public AlunoDto aluno;
-     public LocalDateTime dataCadastro;
-     public LocalDateTime dataAtualizacao;
+     public Date dataCadastro;
+     public Date dataAtualizacao;
      public MapaDto mapa;
      public List<EtapaDto> etapas;
 }

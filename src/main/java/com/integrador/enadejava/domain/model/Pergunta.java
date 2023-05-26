@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,10 +26,10 @@ public class Pergunta {
     private String enunciado;
 
     @Column
-    private LocalDateTime dataInicio;
+    private Date dataInicio;
 
     @Column
-    private LocalDateTime dataTermino;
+    private Date dataTermino;
 
     @JsonIgnore
     @ManyToOne
@@ -39,8 +39,8 @@ public class Pergunta {
     @OneToMany(mappedBy = "pergunta")
     private List<Alternativa> alternativas = new ArrayList<>();
 
-    public void setDataTermino(LocalDateTime dataTermino) {
-        if (this.dataInicio != null && dataTermino.isBefore(this.dataInicio)) {
+    public void setDataTermino(Date dataTermino) {
+        if (this.dataInicio != null && dataTermino.before(this.dataInicio)) {
             throw new IllegalArgumentException("A data de término não pode ser anterior à data de início");
         }
         this.dataTermino = dataTermino;
@@ -51,6 +51,6 @@ public class Pergunta {
         if (dataInicio == null || dataTermino == null) {
             return true;
         }
-        return !dataTermino.isBefore(dataInicio);
+        return !dataTermino.before(dataInicio);
     }
 }

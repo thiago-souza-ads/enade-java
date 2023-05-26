@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.CreationTimestamp;
+import java.util.Date;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,10 +23,10 @@ public class Trilha {
     private Integer anoBase;
 
     @Column
-    private LocalDateTime dataInicio;
+    private Date dataInicio;
 
     @Column
-    private LocalDateTime dataTermino;
+    private Date dataTermino;
 
     @ManyToOne
     @JoinColumn(name = "aluno_id", nullable = false)
@@ -34,11 +34,11 @@ public class Trilha {
 
     @CreationTimestamp
     @Column(nullable = false, columnDefinition = "datetime")
-    private LocalDateTime dataCadastro;
+    private Date dataCadastro;
 
     @CreationTimestamp
     @Column(nullable = false, columnDefinition = "datetime")
-    private LocalDateTime dataAtualizacao;
+    private Date dataAtualizacao;
 
     @OneToOne
     @JoinColumn(name = "mapa_id")

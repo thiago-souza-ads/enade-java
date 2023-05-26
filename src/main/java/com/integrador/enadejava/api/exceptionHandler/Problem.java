@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.integrador.enadejava.domain.constantes.Constantes;
 import lombok.Builder;
 import lombok.Getter;
+import java.util.Date;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -27,7 +27,7 @@ public class Problem {
     private String detail;
 
     private String userMessage;
-    private LocalDateTime timestamp;
+    private Date timestamp;
 
     private List<Object> objects;
 
@@ -45,10 +45,10 @@ public class Problem {
                 Constantes.MENSAGEM_ERRO_GENERIO_USUARIO_FINAL;
     }
 
-    public LocalDateTime getTimestamp() {
+    public Date getTimestamp() {
         return this.userMessage != null ?
                 this.timestamp :
-                LocalDateTime.now();
+                new Date();
     }
 
 }

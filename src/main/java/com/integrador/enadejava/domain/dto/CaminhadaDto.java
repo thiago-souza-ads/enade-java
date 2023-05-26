@@ -3,7 +3,8 @@ package com.integrador.enadejava.domain.dto;
 import com.integrador.enadejava.domain.model.Caminhada;
 import lombok.*;
 
-import java.time.LocalDateTime;
+
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,8 +18,8 @@ import java.util.List;
 public class CaminhadaDto {
     public Long id;
     public Boolean finalizada;
-    public LocalDateTime dataCadastro;
-    public LocalDateTime dataFinalizada;
+    public Date dataCadastro;
+    public Date dataFinalizada;
     public MapaDto mapa;
     public AlunoDto aluno;
     public List<EvidenciaDto> evidencias;

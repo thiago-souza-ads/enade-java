@@ -4,7 +4,7 @@ import com.integrador.enadejava.domain.model.Evidencia;
 import lombok.*;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * A DTO for the {@link Evidencia} entity
@@ -17,6 +17,6 @@ import java.time.LocalDateTime;
 public class EvidenciaDto{
     public Long id;
     public String descricao;
-    public LocalDateTime dataCadastro;
+    public Date dataCadastro;
     public CaminhadaDto caminhada;
 }

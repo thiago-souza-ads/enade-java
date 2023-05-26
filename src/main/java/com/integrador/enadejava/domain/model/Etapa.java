@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity
@@ -22,10 +22,10 @@ public class Etapa {
     private String descricao;
 
     @Column
-    private LocalDateTime dataInicio;
+    private Date dataInicio;
 
     @Column
-    private LocalDateTime dataTermino;
+    private Date dataTermino;
 
     @OneToOne
     @JoinColumn(name = "tipo_etapa_id", nullable = false)
@@ -43,8 +43,8 @@ public class Etapa {
     @JoinColumn(name = "midia_id", nullable = true)
     private Midia midia;
 
-    public void setDataTermino(LocalDateTime dataTermino) {
-        if (dataInicio != null && dataTermino != null && dataTermino.isBefore(dataInicio)) {
+    public void setDataTermino(Date dataTermino) {
+        if (dataInicio != null && dataTermino != null && dataTermino.before(dataInicio)) {
             throw new IllegalArgumentException("Data de término não pode ser anterior à data de início");
         }
         this.dataTermino = dataTermino;

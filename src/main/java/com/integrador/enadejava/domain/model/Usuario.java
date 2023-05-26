@@ -6,9 +6,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import java.util.Date;
 
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,11 +37,11 @@ public class Usuario {
 
     @CreationTimestamp
     @Column(nullable = false, columnDefinition = "datetime")
-    private LocalDateTime dataCadastro;
+    private Date dataCadastro;
 
     @CreationTimestamp
     @Column(nullable = false, columnDefinition = "datetime")
-    private LocalDateTime dataAtualizacao;
+    private Date dataAtualizacao;
 
     @Column()
     private String codigoRecuperacaoUsuario;
@@ -51,11 +51,11 @@ public class Usuario {
 
     @Column()
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime dataExpiracaoToken;
+    private Date dataExpiracaoToken;
 
     @Column()
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime dataAlteracaoSenha;
+    private Date dataAlteracaoSenha;
 
     @Column()
     private Boolean requisitadoNovaSenha;

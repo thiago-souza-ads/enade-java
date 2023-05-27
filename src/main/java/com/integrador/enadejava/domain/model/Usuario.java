@@ -36,11 +36,13 @@ public class Usuario {
     private Boolean ativo;
 
     @CreationTimestamp
-    @Column(nullable = false, columnDefinition = "datetime")
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataCadastro;
 
     @CreationTimestamp
-    @Column(nullable = false, columnDefinition = "datetime")
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
 
     @Column()

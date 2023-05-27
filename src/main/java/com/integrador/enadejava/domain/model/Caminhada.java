@@ -24,10 +24,12 @@ public class Caminhada {
     private Boolean finalizada;
 
     @CreationTimestamp
-    @Column(nullable = false, columnDefinition = "datetime")
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(nullable = false)
     private Date dataCadastro;
 
-    @Column(columnDefinition = "datetime")
+    @Column
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataFinalizada;
 
     @OneToOne

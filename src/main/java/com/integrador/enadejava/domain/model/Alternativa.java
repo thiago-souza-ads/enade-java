@@ -40,6 +40,7 @@ public class Alternativa {
     private Boolean escolhidaUsuario;
 
     @Column
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataEscolha;
 
     @JsonIgnore

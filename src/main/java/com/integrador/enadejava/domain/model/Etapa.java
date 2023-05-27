@@ -22,9 +22,11 @@ public class Etapa {
     private String descricao;
 
     @Column
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataInicio;
 
     @Column
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataTermino;
 
     @OneToOne

@@ -26,9 +26,11 @@ public class Pergunta {
     private String enunciado;
 
     @Column
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataInicio;
 
     @Column
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataTermino;
 
     @JsonIgnore
